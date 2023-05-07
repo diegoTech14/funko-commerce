@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => '__root__',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => NULL,
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
+        'reference' => '37fa7a2b920856132816cffec66247beec1f9903',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,28 +11,13 @@
     ),
     'versions' => array(
         '__root__' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => NULL,
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => '37fa7a2b920856132816cffec66247beec1f9903',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
             'dev_requirement' => false,
-        ),
-        'container-interop/container-interop' => array(
-            'pretty_version' => '1.1.0',
-            'version' => '1.1.0.0',
-            'reference' => 'fc08354828f8fd3245f77a66b9e23a6bca48297e',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../container-interop/container-interop',
-            'aliases' => array(),
-            'dev_requirement' => false,
-        ),
-        'container-interop/container-interop-implementation' => array(
-            'dev_requirement' => false,
-            'provided' => array(
-                0 => '^1.0',
-            ),
         ),
         'fig/http-message-util' => array(
             'pretty_version' => '1.1.5',
@@ -43,11 +28,14 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
-        'mnapoli/php-di' => array(
+        'laravel/serializable-closure' => array(
+            'pretty_version' => 'v1.3.0',
+            'version' => '1.3.0.0',
+            'reference' => 'f23fe9d4e95255dacee1bf3525e0810d1a1b0f37',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../laravel/serializable-closure',
+            'aliases' => array(),
             'dev_requirement' => false,
-            'replaced' => array(
-                0 => '*',
-            ),
         ),
         'nikic/fast-route' => array(
             'pretty_version' => 'v1.3.0',
@@ -59,29 +47,20 @@
             'dev_requirement' => false,
         ),
         'php-di/invoker' => array(
-            'pretty_version' => '1.3.3',
-            'version' => '1.3.3.0',
-            'reference' => '1f4ca63b9abc66109e53b255e465d0ddb5c2e3f7',
+            'pretty_version' => '2.3.3',
+            'version' => '2.3.3.0',
+            'reference' => 'cd6d9f267d1a3474bdddf1be1da079f01b942786',
             'type' => 'library',
             'install_path' => __DIR__ . '/../php-di/invoker',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
         'php-di/php-di' => array(
-            'pretty_version' => '5.4.0',
-            'version' => '5.4.0.0',
-            'reference' => 'e348393488fa909e4bc0707ba5c9c44cd602a1cb',
+            'pretty_version' => '7.0.2',
+            'version' => '7.0.2.0',
+            'reference' => '5d1a8664e24f23b25e0426bbcb1288287fb49181',
             'type' => 'library',
             'install_path' => __DIR__ . '/../php-di/php-di',
-            'aliases' => array(),
-            'dev_requirement' => false,
-        ),
-        'php-di/phpdoc-reader' => array(
-            'pretty_version' => '2.2.1',
-            'version' => '2.2.1.0',
-            'reference' => '66daff34cbd2627740ffec9469ffbac9f8c8185c',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../php-di/phpdoc-reader',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
@@ -93,6 +72,12 @@
             'install_path' => __DIR__ . '/../psr/container',
             'aliases' => array(),
             'dev_requirement' => false,
+        ),
+        'psr/container-implementation' => array(
+            'dev_requirement' => false,
+            'provided' => array(
+                0 => '^1.0',
+            ),
         ),
         'psr/http-factory' => array(
             'pretty_version' => '1.0.2',

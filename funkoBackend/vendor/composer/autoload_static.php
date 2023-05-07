@@ -10,7 +10,7 @@ class ComposerStaticInita2d18ca7ef5933d8bed946a72947665a
         '253c157292f75eb38082b5acb06f3f01' => __DIR__ . '/..' . '/nikic/fast-route/src/functions.php',
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
-        'bbf73f3db644d3dced353b837903e74c' => __DIR__ . '/..' . '/php-di/php-di/src/DI/functions.php',
+        'b33e3d135e5d9e47d845c576147bda89' => __DIR__ . '/..' . '/php-di/php-di/src/functions.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -26,12 +26,14 @@ class ComposerStaticInita2d18ca7ef5933d8bed946a72947665a
             'Psr\\Http\\Server\\' => 16,
             'Psr\\Http\\Message\\' => 17,
             'Psr\\Container\\' => 14,
-            'PhpDocReader\\' => 13,
+        ),
+        'L' => 
+        array (
+            'Laravel\\SerializableClosure\\' => 28,
         ),
         'I' => 
         array (
             'Invoker\\' => 8,
-            'Interop\\Container\\' => 18,
         ),
         'F' => 
         array (
@@ -41,6 +43,10 @@ class ComposerStaticInita2d18ca7ef5933d8bed946a72947665a
         'D' => 
         array (
             'DI\\' => 3,
+        ),
+        'A' => 
+        array (
+            'App\\' => 4,
         ),
     );
 
@@ -75,17 +81,13 @@ class ComposerStaticInita2d18ca7ef5933d8bed946a72947665a
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
         ),
-        'PhpDocReader\\' => 
+        'Laravel\\SerializableClosure\\' => 
         array (
-            0 => __DIR__ . '/..' . '/php-di/phpdoc-reader/src/PhpDocReader',
+            0 => __DIR__ . '/..' . '/laravel/serializable-closure/src',
         ),
         'Invoker\\' => 
         array (
             0 => __DIR__ . '/..' . '/php-di/invoker/src',
-        ),
-        'Interop\\Container\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/container-interop/container-interop/src/Interop/Container',
         ),
         'Fig\\Http\\Message\\' => 
         array (
@@ -97,7 +99,11 @@ class ComposerStaticInita2d18ca7ef5933d8bed946a72947665a
         ),
         'DI\\' => 
         array (
-            0 => __DIR__ . '/..' . '/php-di/php-di/src/DI',
+            0 => __DIR__ . '/..' . '/php-di/php-di/src',
+        ),
+        'App\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
         ),
     );
 
