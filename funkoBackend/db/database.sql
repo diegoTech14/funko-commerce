@@ -6,13 +6,13 @@ USE funkoShop;
 DROP TABLE IF EXISTS productTypes;
 CREATE TABLE productTypes(
 	id INT AUTO_INCREMENT PRIMARY KEY,
-	nameType VARCHAR(50) NOT NULL
+	typeName VARCHAR(50) NOT NULL
 );
 
 DROP TABLE IF EXISTS categories;
 CREATE TABLE categories(
 	id INT AUTO_INCREMENT PRIMARY KEY,
-	nameType VARCHAR(50) NOT NULL
+	categoryName VARCHAR(50) NOT NULL
 );
 
 DROP TABLE IF EXISTS funkos;
@@ -25,6 +25,7 @@ CREATE TABLE funkos(
     FOREIGN KEY (categoryID) REFERENCES categories (id),
     exclusivity INT NOT NULL,
 	urlImage VARCHAR(150) NOT NULL,
+    urlSecondImage VARCHAR(150) NOT NULL,
     stock INT NOT NULL,
 	price DOUBLE(6, 2),
     description TEXT NOT NULL
