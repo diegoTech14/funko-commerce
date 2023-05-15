@@ -24,7 +24,7 @@ CREATE TABLE funkos(
     categoryID INT NOT NULL,
     FOREIGN KEY (categoryID) REFERENCES categories (id),
     exclusivity INT NOT NULL,
-	urlImage VARCHAR(150) NOT NULL,
+	urlFirstImage VARCHAR(150) NOT NULL,
     urlSecondImage VARCHAR(150) NOT NULL,
     stock INT NOT NULL,
 	price DOUBLE(6, 2),
