@@ -11,7 +11,9 @@
     $app = AppFactory::create();
     $container = $app -> getContainer();
 
-    include_once 'routex.php';
+    include_once 'routes.php';
     include_once 'config.php';
     include_once 'connection.php';
+
+    $app->run();
 ?>

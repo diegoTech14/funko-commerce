@@ -1,0 +1,146 @@
+[
+    {
+        "_name": "Pop! Bulma In Bunny Outfit",
+        "_productTypeID": "1",
+        "_categoryID": "1",
+        "_exclusivity": "0",
+        "_urlFirstImage": "C:\\languagesProjects\\funko-commerce\\funkoBackend\\src\\img\\bulma1.png",
+        "_urlSecondImage": "C:\\languagesProjects\\funko-commerce\\funkoBackend\\src\\img\\bulma2.png",
+        "_stock": "12",
+        "_price": "15.00",
+        "_description": "Genius scientist, Bulma, has donned a bunny costume, resulting in hilarity and shenanigans. Complete your Dragon Ball Z collection with this exclusive Pop! Bulma in bunny outfit."
+    },
+    {
+        "_name": "Pop! Super Saiyan Rose Goku Black",
+        "_productTypeID": "1",
+        "_categoryID": "1",
+        "_exclusivity": "0",
+        "_urlFirstImage": "C:\\languagesProjects\\funko-commerce\\funkoBackend\\src\\img\\gokuBlack1.png",
+        "_urlSecondImage": "C:\\languagesProjects\\funko-commerce\\funkoBackend\\src\\img\\gokuBlack2.png",
+        "_stock": "12",
+        "_price": "15.00",
+        "_description": "As an infant, Goku was sent to destroy Earth but ended up becoming one of the planet's greatest heroes after a head injury rid the young Saiyan of his senselessly destructive nature."
+    },
+    {
+        "_name": "Pop! Might Guy (Eight inner gates)",
+        "_productTypeID": "1",
+        "_categoryID": "1",
+        "_exclusivity": "0",
+        "_urlFirstImage": "C:\\languagesProjects\\funko-commerce\\funkoBackend\\src\\img\\guy1.png",
+        "_urlSecondImage": "C:\\languagesProjects\\funko-commerce\\funkoBackend\\src\\img\\guy2.png",
+        "_stock": "12",
+        "_price": "15.00",
+        "_description": "Open the gates! Pop! Might Guy (Eight Inner Gates) is ready to unlock his full potential in your collection. Draw on the power of Pop! Might Guy (Eight Inner Gates) and add him to your Anime team. Vinyl figure is approximately 4-inches tall."
+    },
+    {
+        "_name": "Pop! Naruto As Nine Tails",
+        "_productTypeID": "1",
+        "_categoryID": "1",
+        "_exclusivity": "1",
+        "_urlFirstImage": "C:\\languagesProjects\\funko-commerce\\funkoBackend\\src\\img\\naruto1.png",
+        "_urlSecondImage": "C:\\languagesProjects\\funko-commerce\\funkoBackend\\src\\img\\naruto2.png",
+        "_stock": "12",
+        "_price": "15.00",
+        "_description": "Naruto is charging straight into your Naruto Shippuden set. Own your own Pop! Vinyl of Naruto in his iconic running stance. Collectible stands 3.75-inches tall."
+    },
+    {
+        "_name": "Pop! Mysterio",
+        "_productTypeID": "4",
+        "_categoryID": "2",
+        "_exclusivity": "1",
+        "_urlFirstImage": "C:\\languagesProjects\\funko-commerce\\funkoBackend\\src\\img\\mysterio1.png",
+        "_urlSecondImage": "C:\\languagesProjects\\funko-commerce\\funkoBackend\\src\\img\\mysterio2.png",
+        "_stock": "5",
+        "_price": "30.00",
+        "_description": "Bring some mystery into your Spider-Man: Beyond Amazing collection with Pop! Mysterio. This exclusive collectible features a metallic dome and glow-in-the-dark smoke. Help Spider-Man track down this villain by adding him to your Marvel set. Vinyl bobblehead is approximately 4.3-inches tall."
+    },
+    {
+        "_name": "Pop! Deluxe Sinister Six Spider-man",
+        "_productTypeID": "4",
+        "_categoryID": "2",
+        "_exclusivity": "1",
+        "_urlFirstImage": "C:\\languagesProjects\\funko-commerce\\funkoBackend\\src\\img\\spiderman1.png",
+        "_urlSecondImage": "C:\\languagesProjects\\funko-commerce\\funkoBackend\\src\\img\\spiderman2.png",
+        "_stock": "3",
+        "_price": "35.00",
+        "_description": "The Marvel Sinister Six series sets a whole new scene in your collection and it is exclusively available here. The Funko Pop! Deluxe Sinister Six series is comprised of 7 brand new, unique figures, which have bases that nest together to form a larger set display."
+    },
+    {
+        "_name": "Pop! Battle Ready Batman",
+        "_productTypeID": "4",
+        "_categoryID": "5",
+        "_exclusivity": "0",
+        "_urlFirstImage": "C:\\languagesProjects\\funko-commerce\\funkoBackend\\src\\img\\batman1.png",
+        "_urlSecondImage": "C:\\languagesProjects\\funko-commerce\\funkoBackend\\src\\img\\batman2.png",
+        "_stock": "8",
+        "_price": "15.00",
+        "_description": "Batman™ stands ready to face The Riddler™ as he fights crime in Gotham City™. Celebrate one of DC’s most recognizable super heroes by adding the battle-ready Pop! Batman to your DC The Batman movie collection."
+    },
+    {
+        "_name": "Pop! Die-Cast Batman 1989",
+        "_productTypeID": "3",
+        "_categoryID": "5",
+        "_exclusivity": "1",
+        "_urlFirstImage": "C:\\languagesProjects\\funko-commerce\\funkoBackend\\src\\img\\batmanD1.png",
+        "_urlSecondImage": "C:\\languagesProjects\\funko-commerce\\funkoBackend\\src\\img\\batmanD2.png",
+        "_stock": "3",
+        "_price": "50.00",
+        "_description": "Introducing the new Pop! Die-cast figure, designed to be the front and center, top-shelf collectible. These figures come in acrylic cases featuring etched details and fasten to the base of the case."
+    },
+
+    {
+        "_name": "Pop! Thor With Pin",
+        "_productTypeID": "3",
+        "_categoryID": "2",
+        "_exclusivity": "0",
+        "_urlFirstImage": "C:\\languagesProjects\\funko-commerce\\funkoBackend\\src\\img\\ThorPin1.png",
+        "_urlSecondImage": "C:\\languagesProjects\\funko-commerce\\funkoBackend\\src\\img\\ThorPin2.png",
+        "_stock": "10",
+        "_price": "20.00",
+        "_description": "Strike up an alliance with Pop! Thor to take on evil forces that might threaten your Marvel collection. When the world’s most evil villains attack, call on Earth’s Mightiest Heroes™ to save the day."
+    },
+    {
+        "_name": "Pop! Leatherface",
+        "_productTypeID": "4",
+        "_categoryID": "4",
+        "_exclusivity": "0",
+        "_urlFirstImage": "C:\\languagesProjects\\funko-commerce\\funkoBackend\\src\\img\\leatherface1.png",
+        "_urlSecondImage": "C:\\languagesProjects\\funko-commerce\\funkoBackend\\src\\img\\leatherface2.png",
+        "_stock": "10",
+        "_price": "15.00",
+        "_description": "Leatherface's appetite has grown and he's decided to infiltrate your collection of horrors and The Texas Chainsaw Massacre as a Funko Pop! figure. Vinyl figure is approximately 4.5-inches tall."
+    },
+    {
+        "_name": "Pop! Elvira (Black Light)",
+        "_productTypeID": "4",
+        "_categoryID": "4",
+        "_exclusivity": "1",
+        "_urlFirstImage": "C:\\languagesProjects\\funko-commerce\\funkoBackend\\src\\img\\elvira1.png",
+        "_urlSecondImage": "C:\\languagesProjects\\funko-commerce\\funkoBackend\\src\\img\\elvira2.png",
+        "_stock": "",
+        "_price": "15.00",
+        "_description": "Spend a bewitching evening with Exclusive Pop! Elvira, in the dark! Under a black light, Pop! Elvira glows in haunting colors, and she offers you her heart. Grow your Pop! Icons collection! Vinyl figure is approximately 4-inches tall."
+    },
+    {
+        "_name": "Pop! Chucky",
+        "_productTypeID": "4",
+        "_categoryID": "4",
+        "_exclusivity": "0",
+        "_urlFirstImage": "C:\\languagesProjects\\funko-commerce\\funkoBackend\\src\\img\\chucky1.png",
+        "_urlSecondImage": "C:\\languagesProjects\\funko-commerce\\funkoBackend\\src\\img\\chucky2.png",
+        "_stock": "8",
+        "_price": "15.00",
+        "_description": "Schedule a playdate with Bride of Chucky Pop! Chucky. Capture him to haunt your Pop! Movies collection. Vinyl figure is approximately 4-inches tall."
+    },
+    {
+        "_name": "Pop! Moment Hakuna Matata",
+        "_productTypeID": "6",
+        "_categoryID": "3",
+        "_exclusivity": "1",
+        "_urlFirstImage": "C:\\languagesProjects\\funko-commerce\\funkoBackend\\src\\img\\MomentHakunaMatata1.png",
+        "_urlSecondImage": "C:\\languagesProjects\\funko-commerce\\funkoBackend\\src\\img\\MomentHakunaMatata2.png",
+        "_stock": "",
+        "_price": "",
+        "_description": "Let your worries melt away with Pop! Simba, Pop! Pumba, and Pop! Timon. Celebrate Disney’s 100th Anniversary by completing your The Lion King collection with this exclusive Pop! Hakuna Matata Moment."
+    }
+]

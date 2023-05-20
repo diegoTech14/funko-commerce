@@ -7,39 +7,47 @@ CREATE PROCEDURE searchFunko (IN _name VARCHAR(70))
         SELECT * FROM funkos WHERE funkos.name LIKE CONCAT("%", _name ,"%");
     END $$
 
-DROP PROCEDURE IF EXISTS createFunko$$
-CREATE PROCEDURE  createFunko (
-    IN _name VARCHAR(50),
-    IN _productTypeID INT,
-    IN _categoryID INT,
-    IN _exclusivity INT, 
-    IN _urlFirstImage VARCHAR(150),
-    IN _urlSecondImage VARCHAR(150),
-    IN _stock INT,
-    IN _price DOUBLE(6, 2),
-    IN _description TEXT
-)
+DROP FUNCTION IF EXISTS createFunko$$
+CREATE FUNCTION  createFunko (
+    _name VARCHAR(50),
+    _productTypeID INT,
+    _categoryID INT,
+    _exclusivity INT, 
+    _urlFirstImage VARCHAR(150),
+    _urlSecondImage VARCHAR(150),
+    _stock INT,
+    _price DOUBLE(6, 2),
+    _description TEXT
+    
+)RETURNS INT(1)
     BEGIN
-        INSERT INTO funkos (
-            name, 
-            productTypeID, 
-            categoryID, 
-            exclusivity, 
-            urlFirstImage, 
-            urlSecondImage,
-            stock, 
-            price, 
-            description) VALUES (
-                _name, 
-                _productTypeID, 
-                _categoryID, 
-                _exclusivity, 
-                _urlFirstImage, 
-                _urlSecondImage,
-                _stock, 
-                _price, 
-                _description
-            );
+        DECLARE _amount int;
+        SELECT count(name) INTO _amount FROM funkos WHERE name = _name;
+        if _amount = 0 THEN
+            INSERT INTO funkos (
+                name, 
+                productTypeID, 
+                categoryID, 
+                exclusivity, 
+                urlFirstImage, 
+                urlSecondImage,
+                stock, 
+                price, 
+                description) VALUES (
+                    _name, 
+                    _productTypeID, 
+                    _categoryID, 
+                    _exclusivity, 
+                    _urlFirstImage, 
+                    _urlSecondImage,
+                    _stock, 
+                    _price, 
+                    _description
+                );
+        ELSE
+            SET _amount = 1;
+        END IF;
+        RETURN _amount;
     END$$
 
 DROP FUNCTION IF EXISTS editFunko$$

@@ -1,7 +1,7 @@
 USE fukoshop;
 
 DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `addRol`(_rolName varchar(25))
+CREATE DEFINER=`root`@`localhost` PROCEDURE createRol (_rolName varchar(25))
     BEGIN
         Insert into roles(rolName)VALUES (_rolName);
     END$$
