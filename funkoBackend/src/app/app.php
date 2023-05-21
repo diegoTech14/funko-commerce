@@ -14,6 +14,7 @@
     include_once 'routes.php';
     include_once 'config.php';
     include_once 'connection.php';
+    include_once 'index.php';
 
     $app->run();
 ?>
