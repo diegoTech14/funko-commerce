@@ -7,21 +7,29 @@
 
     //Will use these methods on the routes
     class Person extends dbAccess {
-        
+        //const ROLUSER = 0;
         const RESOURCE = "Person";
+        const ID = 'id'; // código de West
 
         public function createPerson(Request $request, Response $response, $args){
             $body = json_decode($request->getBody());
-            $result = $this -> createRegister($body, self::RESOURCE);
-            return $response->withStatus(200);
+            $body -> password = 
+            password_hash($body -> password, PASSWORD_BCRYPT, ['cost' => 10]);
+            //var_dump($body); die();
+            $result = $this -> createRegisterUser($body, self::RESOURCE, self::ID);
+            $status = match($result){
+                1,'1' => 201,
+                0,'0' => 409,
+                2,'2' => 500
+            };
+
+            return $response->withStatus($status);
         }
 
         public function deletePerson(Request $request, Response $response, $args){
             $result = $this -> deleteRegister($args['id'],self::RESOURCE);
             $status = $result > 0 ? 200 : 404;
             return $response->withStatus($status);
-
-
         }
 
         public function searchPerson(Request $request, Response $response, $args){
@@ -42,10 +50,10 @@
             $id = $args['id'];
             $body = json_decode($request->getBody());
             $result = $this -> editRegister($body, self::RESOURCE, $id);            
-            $status = match($result[0]){
-                '0' => 404,
-                '1' => 200,
-                '2' => 409
+            $status = match($result){
+                0,'0' => 404,
+                1,'1' => 200,
+                2,'2' => 409
             };
             return $response->withStatus($status);
         }
@@ -61,73 +69,5 @@
                 -> withHeader('Content-type', 'Application/json')
                 -> withStatus($status);
         }
-/*
-        public function edit(Request $request, Response $response, $args){
-            //(:id, :serie, :modelo, :marca, :categoria, :descripcion)
-            $id = $args['id'];
-            $body = json_decode($request->getBody());
-            $result = $this -> editRegister($body, self::RESOURCE, $id);            
-            $status = match($result[0]){
-                '0' => 404,
-                '1' => 200,
-                '2' => 409
-            };
-            return $response->withStatus($status);
-        }
 
-        public function delete(Request $request, Response $response, $args){
-            $id = $args['id'];
-            $result = $this -> deleteRegister(self::RESOURCE, $args['id']);
-            $status = $result > 0 ? 200 : 404;
-            return $response->withStatus($status);
-        }
-
-        public function search(Request $request, Response $response, $args){
-            
-            $result = $this -> searchRegister(self::RESOURCE, $args['id']);
-            $status = !$result ? 404 : 200;
-
-            if($result){
-                $response->getBody()->write(json_encode($result));
-            }
-            return $response
-                ->withHeader('Content-type', 'Application/json')
-                ->withStatus($status);
-        }
-
-        public function filter(Request $request, Response $response, $args){
-
-            $data = $request->getQueryParams();//parámetros que vienen ocultos o encapsulados en el get
-            $result = $this -> filterRegister($data, $args, self::RESOURCE);
-            $status = sizeof($result) > 0 ? 200 : 204;
-            $response -> getBody() -> write(json_encode($result));
-            return $response
-                -> withHeader('Content-type', 'Application/json')
-                -> withStatus($status);
-        }
-
-        public function numRegs(Request $request, Response $response, $args){
-
-            $data = $request->getQueryParams();
-            $result['cant'] = $this -> numOfRegisters($data, self::RESOURCE);
-            
-            $response->getBody()->write(json_encode($result));
-            return $response
-                -> withHeader('Content-type', 'Application/json')
-                -> withStatus(200);
-        }
-
-        public function changeOwner(Request $request, Response $response, $args){
-                        
-            $body = json_decode($request->getBody(), 1);
-            $result = $this -> changeOwnerDB(
-                ['id' => $args['id'], 'idCliente' => $body['idCliente']]);
-
-            $status = match($result[0]){
-                '0' => 404,
-                '1' => 200,
-                '2' => 409
-            };
-            return $response->withStatus($status);
-        }*/
     }

@@ -1,8 +1,9 @@
 {
     "require": {
+        "tuupola/slim-jwt-auth": "^3.7",
+        "php-di/slim-bridge": "^3.3",
         "slim/slim": "4.*",
-        "slim/psr7": "^1.6",
-        "php-di/php-di": "7.*"
+        "slim/psr7": "^1.6"
     },
     "autoload":{
         "psr-4":{

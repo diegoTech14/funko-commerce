@@ -2,10 +2,46 @@ USE funkoshop;
 DELIMITER $$
 
 DROP PROCEDURE IF EXISTS searchFunko$$
-CREATE PROCEDURE searchFunko (IN _name VARCHAR(70))
+CREATE PROCEDURE searchFunko (IN _id INT)
     BEGIN
-        SELECT * FROM funkos WHERE funkos.name LIKE CONCAT("%", _name ,"%");
+        SELECT  FROM funkos WHERE funkos.id = _id;
     END $$
+DELIMITER ;
+
+DELIMITER $$
+DROP PROCEDURE IF EXISTS searchFunkoDetail$$
+    CREATE PROCEDURE searchFunkoDetail(IN _id INT)
+        BEGIN
+            SELECT 
+            funkos.id, 
+            funkos.name, 
+            funkos.exclusivity, 
+            funkos.urlFirstImage, 
+            funkos.urlSecondImage, 
+            funkos.price, 
+            funkos.description,
+            producttypes.typeName,
+            categories.categoryName FROM funkos 
+            INNER JOIN producttypes ON funkos.productTypeID = producttypes.id 
+            INNER JOIN categories ON funkos.categoryID = categories.id
+            WHERE funkos.id = _id;
+        END$$
+DELIMITER ;
+
+DELIMITER $$
+DROP PROCEDURE IF EXISTS filterFunko$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE filterFunko(
+    _parameters varchar(100), 
+    _page SMALLINT UNSIGNED, 
+    _cantRegs SMALLINT UNSIGNED)
+begin
+    SELECT stringFilter(_parameters, 'id&name&productTypeID&categoryID&exclusivity&') INTO @filter;
+    SELECT concat("SELECT * from funkos where ", @filter, " LIMIT ", 
+        _page, ", ", _cantRegs) INTO @sql;
+    PREPARE stmt FROM @sql;
+    EXECUTE stmt;
+    DEALLOCATE PREPARE stmt;  
+end$$
 
 DROP FUNCTION IF EXISTS createFunko$$
 CREATE FUNCTION  createFunko (
@@ -50,6 +86,7 @@ CREATE FUNCTION  createFunko (
         RETURN _amount;
     END$$
 
+
 DROP FUNCTION IF EXISTS editFunko$$
 CREATE FUNCTION editFunko(
     _id INT,
@@ -74,7 +111,7 @@ BEGIN
             productTypeID = _productTypeID,
             categoryID = _categoryID,
             exclusivity = _exclusivity, 
-            urlFirstImage = __urlFirstImage,
+            urlFirstImage = _urlFirstImage,
             urlSecondImage = _urlSecondImage,
             stock = _stock,
             price = _price,
@@ -84,12 +121,31 @@ BEGIN
     RETURN amount;
 END$$
 
-DROP PROCEDURE IF EXISTS deleteFunko$$
-CREATE PROCEDURE deleteFunko (IN _id INT)
+DROP FUNCTION IF EXISTS addStock$$
+CREATE FUNCTION addStock(IN _amount INT, IN _id INT)
+    RETURNS INT
+    BEGIN
+        DECLARE quant INT;
+        SELECT COUNT(funkos.id) INTO quant FROM funkos WHERE funkos.id = _id;
+        IF quant > 0 THEN   
+            UPDATE funkos SET 
+                stock + _stock
+            WHERE funkos.id = _id;
+        END IF;
+        RETURN quant;
+    END$$
 
-    BEGIN   
-        DELETE FROM funkos WHERE funkos.id = _id;
-    END $$
+DROP FUNCTION IF EXISTS deleteFunko$$
+CREATE FUNCTION deleteFunko (_id INT)
+RETURNS INT
+    BEGIN
+        DECLARE rowsAffected INT;
+    
+        DELETE FROM funkos WHERE id = _id;
+        SET rowsAffected = ROW_COUNT();
+    
+    RETURN rowsAffected;
+END$$
 
 DELIMITER ;
 
@@ -163,3 +219,17 @@ CREATE PROCEDURE priceFilterDESC()
         FROM funkos ORDER BY funkos.price DESC;
     END$$
 DELIMITER ;
+
+DELIMITER $$
+
+DROP PROCEDURE IF EXISTS funkoFeed$$
+CREATE PROCEDURE funkoFeed()
+    BEGIN
+        SELECT funkos.id, funkos.name, funkos.urlFirstImage, funkos.urlSecondImage, funkos.price, 
+                producttypes.typeName, categories.categoryName FROM funkos INNER JOIN producttypes 
+                    ON producttypes.id = funkos.productTypeID INNER JOIN categories 
+                    ON categories.id = funkos.categoryID;
+    END$$
+
+DELIMITER ;
+

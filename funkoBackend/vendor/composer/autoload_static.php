@@ -4,16 +4,21 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInita2d18ca7ef5933d8bed946a72947665a
+class ComposerStaticInit69e18076983e89c483019c781abdc0cc
 {
     public static $files = array (
         '253c157292f75eb38082b5acb06f3f01' => __DIR__ . '/..' . '/nikic/fast-route/src/functions.php',
+        'b33e3d135e5d9e47d845c576147bda89' => __DIR__ . '/..' . '/php-di/php-di/src/functions.php',
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
-        'b33e3d135e5d9e47d845c576147bda89' => __DIR__ . '/..' . '/php-di/php-di/src/functions.php',
     );
 
     public static $prefixLengthsPsr4 = array (
+        'T' => 
+        array (
+            'Tuupola\\Middleware\\' => 19,
+            'Tuupola\\Http\\Factory\\' => 21,
+        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Php80\\' => 23,
@@ -37,11 +42,13 @@ class ComposerStaticInita2d18ca7ef5933d8bed946a72947665a
         ),
         'F' => 
         array (
+            'Firebase\\JWT\\' => 13,
             'Fig\\Http\\Message\\' => 17,
             'FastRoute\\' => 10,
         ),
         'D' => 
         array (
+            'DI\\Bridge\\Slim\\' => 15,
             'DI\\' => 3,
         ),
         'A' => 
@@ -51,6 +58,15 @@ class ComposerStaticInita2d18ca7ef5933d8bed946a72947665a
     );
 
     public static $prefixDirsPsr4 = array (
+        'Tuupola\\Middleware\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/tuupola/callable-handler/src',
+            1 => __DIR__ . '/..' . '/tuupola/slim-jwt-auth/src',
+        ),
+        'Tuupola\\Http\\Factory\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/tuupola/http-factory/src',
+        ),
         'Symfony\\Polyfill\\Php80\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php80',
@@ -65,7 +81,7 @@ class ComposerStaticInita2d18ca7ef5933d8bed946a72947665a
         ),
         'Psr\\Log\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
+            0 => __DIR__ . '/..' . '/psr/log/src',
         ),
         'Psr\\Http\\Server\\' => 
         array (
@@ -89,6 +105,10 @@ class ComposerStaticInita2d18ca7ef5933d8bed946a72947665a
         array (
             0 => __DIR__ . '/..' . '/php-di/invoker/src',
         ),
+        'Firebase\\JWT\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/firebase/php-jwt/src',
+        ),
         'Fig\\Http\\Message\\' => 
         array (
             0 => __DIR__ . '/..' . '/fig/http-message-util/src',
@@ -96,6 +116,10 @@ class ComposerStaticInita2d18ca7ef5933d8bed946a72947665a
         'FastRoute\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/fast-route/src',
+        ),
+        'DI\\Bridge\\Slim\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-di/slim-bridge/src',
         ),
         'DI\\' => 
         array (
@@ -119,9 +143,9 @@ class ComposerStaticInita2d18ca7ef5933d8bed946a72947665a
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInita2d18ca7ef5933d8bed946a72947665a::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInita2d18ca7ef5933d8bed946a72947665a::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInita2d18ca7ef5933d8bed946a72947665a::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit69e18076983e89c483019c781abdc0cc::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit69e18076983e89c483019c781abdc0cc::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit69e18076983e89c483019c781abdc0cc::$classMap;
 
         }, null, ClassLoader::class);
     }

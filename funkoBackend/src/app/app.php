@@ -9,12 +9,22 @@
     AppFactory::setContainer($cont_aux);
 
     $app = AppFactory::create();
+    
+    $app->add(new Tuupola\Middleware\JwtAuthentication([
+        "secure" => false,
+        "ignore" => ["/session", "/user", "/person", "/funko"],
+        "secret" => 'Some key',
+        "algoritm" => ["HS256", "HS384"]
+    ]));
+
+
+    
     $container = $app -> getContainer();
 
     include_once 'routes.php';
     include_once 'config.php';
     include_once 'connection.php';
-    include_once 'index.php';
+    
 
     $app->run();
 ?>
